@@ -6,11 +6,11 @@
   <DefaultLocale>en-HK</DefaultLocale>
   <DisplayName DefaultValue="MailTex"/>
   <Description DefaultValue="An add-in for rendering TeX in Outlook messages."/>
-  <IconUrl DefaultValue="https://localhost:3000/assets/icon-512.png"/>
-  <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-512.png"/>
-  <SupportUrl DefaultValue="https://www.contoso.com/help"/>
+  <IconUrl DefaultValue="https://mailtex.3underscoren.work/assets/icon-512.jpeg"/>
+  <HighResolutionIconUrl DefaultValue="https://mailtex.3underscoren.work/assets/icon-512.jpeg"/>
+  <SupportUrl DefaultValue="https://github.com/3underscoreN/MailTex"/>
   <AppDomains>
-    <AppDomain>https://www.contoso.com</AppDomain>
+    <AppDomain>https://mailtex.3underscoren.work</AppDomain>
   </AppDomains>
   <Hosts>
     <Host Name="Mailbox"/>
@@ -23,7 +23,7 @@
   <FormSettings>
     <Form xsi:type="ItemEdit">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://localhost:3000/taskpane.html"/>
+        <SourceLocation DefaultValue="https://mailtex.3underscoren.work/taskpane.html"/>
       </DesktopSettings>
     </Form>
   </FormSettings>
@@ -66,10 +66,10 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon.512x512" DefaultValue="https://localhost:3000/assets/icon-512.png"/>
+        <bt:Image id="Icon.512x512" DefaultValue="https://mailtex.3underscoren.work/assets/icon-512.jpeg"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://mailtex.3underscoren.work/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="ComposeGroupLabel" DefaultValue="MailTex"/>
