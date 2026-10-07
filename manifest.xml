@@ -6,8 +6,8 @@
   <DefaultLocale>en-HK</DefaultLocale>
   <DisplayName DefaultValue="MailTex"/>
   <Description DefaultValue="An add-in for rendering TeX in Outlook messages."/>
-  <IconUrl DefaultValue="https://mailtex.3underscoren.work/assets/icon-512.png"/>
-  <HighResolutionIconUrl DefaultValue="https://mailtex.3underscoren.work/assets/icon-512.png"/>
+  <IconUrl DefaultValue="https://mailtex.3underscoren.work/assets/icon-64.png"/>
+  <HighResolutionIconUrl DefaultValue="https://mailtex.3underscoren.work/assets/icon-128.png"/>
   <SupportUrl DefaultValue="https://github.com/3underscoreN/MailTex"/>
   <AppDomains>
     <AppDomain>https://mailtex.3underscoren.work</AppDomain>
@@ -52,7 +52,9 @@
                     <Description resid="TaskpaneButton.Tooltip"/>
                   </Supertip>
                   <Icon>
-                    <bt:Image size="512" resid="Icon.512x512"/>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <SourceLocation resid="Taskpane.Url"/>
@@ -66,7 +68,9 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon.512x512" DefaultValue="https://mailtex.3underscoren.work/assets/icon-512.png"/>
+        <bt:Image id="Icon.16x16" DefaultValue="https://mailtex.3underscoren.work/assets/icon-16.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://mailtex.3underscoren.work/assets/icon-32.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://mailtex.3underscoren.work/assets/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
         <bt:Url id="Taskpane.Url" DefaultValue="https://mailtex.3underscoren.work/taskpane.html"/>
