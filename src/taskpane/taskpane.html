@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MailTex</title>
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    <link href="taskpane.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/katex.min.css" integrity="sha384-3rdsX6e5mueWyoweR9NIVmtEsUkokpBT/0ALqKKIBMr9j4qhHkaIkAcGgsE6uVlp" crossorigin="anonymous">
+</head>
+<body>
+    <main class="app" aria-labelledby="app-title">
+        <header class="app-header">
+            <div>
+                <h1 id="app-title">MailTex</h1>
+                <p>Write TeX and preview it before inserting it into your message.</p>
+            </div>
+        </header>
+
+        <section class="editor-section" aria-labelledby="editor-label">
+            <div class="section-heading">
+                <label id="editor-label" for="tex-input">TeX</label>
+                <div class="editor-options">
+                    <label class="mode-toggle" for="block-mode">
+                        <input id="block-mode" type="checkbox" />
+                        <span>Block math</span>
+                    </label>
+                </div>
+            </div>
+            <textarea
+                id="tex-input"
+                aria-label="TeX source"
+                autocomplete="off"
+                autocapitalize="off"
+                spellcheck="false"
+                placeholder="Enter TeX, for example: \frac{a}{b}"
+                rows="7"></textarea>
+        </section>
+
+        <section class="preview-section" aria-labelledby="preview-label">
+            <div class="section-heading">
+                <h2 id="preview-label">Preview</h2>
+                <span id="render-status" role="status" aria-live="polite">Enter TeX to see a preview.</span>
+            </div>
+            <div id="preview" class="preview" aria-label="Rendered TeX preview">
+                <span class="preview-placeholder">Your rendered formula will appear here.</span>
+            </div>
+        </section>
+
+        <footer class="actions">
+            <button id="insert-button" type="button" disabled>Insert into message</button>
+        </footer>
+    </main>
+</body>
+</html>
