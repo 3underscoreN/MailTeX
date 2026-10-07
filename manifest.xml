@@ -6,8 +6,8 @@
   <DefaultLocale>en-HK</DefaultLocale>
   <DisplayName DefaultValue="MailTex"/>
   <Description DefaultValue="An add-in for rendering TeX in Outlook messages."/>
-  <IconUrl DefaultValue="https://mailtex.3underscoren.work/assets/icon-512.jpeg"/>
-  <HighResolutionIconUrl DefaultValue="https://mailtex.3underscoren.work/assets/icon-512.jpeg"/>
+  <IconUrl DefaultValue="https://mailtex.3underscoren.work/assets/icon-512.png"/>
+  <HighResolutionIconUrl DefaultValue="https://mailtex.3underscoren.work/assets/icon-512.png"/>
   <SupportUrl DefaultValue="https://github.com/3underscoreN/MailTex"/>
   <AppDomains>
     <AppDomain>https://mailtex.3underscoren.work</AppDomain>
@@ -66,7 +66,7 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon.512x512" DefaultValue="https://mailtex.3underscoren.work/assets/icon-512.jpeg"/>
+        <bt:Image id="Icon.512x512" DefaultValue="https://mailtex.3underscoren.work/assets/icon-512.png"/>
       </bt:Images>
       <bt:Urls>
         <bt:Url id="Taskpane.Url" DefaultValue="https://mailtex.3underscoren.work/taskpane.html"/>
