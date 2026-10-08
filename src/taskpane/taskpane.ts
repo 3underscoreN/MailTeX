@@ -33,65 +33,6 @@ function applyOfficeTheme(theme?: Office.OfficeTheme): string {
   return backgroundColor;
 }
 
-function addInlineImage(item: Office.MessageCompose, image: HTMLImageElement): Promise<string> {
-  const dataUrlPrefix = "data:image/png;base64,";
-  if (!image.src.startsWith(dataUrlPrefix)) {
-    return Promise.reject(new Error("The rendered formula is not a PNG data URL."));
-  }
-
-  const base64Image = image.src.slice(dataUrlPrefix.length);
-  const attachmentName = `mailtex-formula-${Date.now()}.png`;
-  return new Promise((resolve, reject) => {
-    item.addFileAttachmentFromBase64Async(
-      base64Image,
-      attachmentName,
-      { isInline: true },
-      (result) => {
-        if (result.status === Office.AsyncResultStatus.Failed) {
-          reject(new Error(result.error.message));
-        } else {
-          resolve(result.value);
-        }
-      }
-    );
-  });
-}
-
-function getInlineImageContentId(
-  item: Office.MessageCompose,
-  attachmentId: string
-): Promise<string> {
-  return new Promise((resolve, reject) => {
-    item.getAttachmentsAsync((result) => {
-      if (result.status === Office.AsyncResultStatus.Failed) {
-        reject(new Error(result.error.message));
-        return;
-      }
-
-      const attachment = result.value.find(
-        (candidate) => candidate.id === attachmentId && candidate.isInline
-      );
-      if (!attachment?.contentId) {
-        reject(new Error("Outlook did not return a content ID for the inline image."));
-        return;
-      }
-      resolve(attachment.contentId);
-    });
-  });
-}
-
-function removeInlineImage(item: Office.MessageCompose, attachmentId: string): Promise<void> {
-  return new Promise((resolve, reject) => {
-    item.removeAttachmentAsync(attachmentId, (result) => {
-      if (result.status === Office.AsyncResultStatus.Failed) {
-        reject(new Error(result.error.message));
-      } else {
-        resolve();
-      }
-    });
-  });
-}
-
 Office.onReady(async (info) => {
   if (info.host !== Office.HostType.Outlook) {
     return;
@@ -190,61 +131,29 @@ Office.onReady(async (info) => {
     void updatePreview();
   });
 
-  insertButton.addEventListener("click", async () => {
+  insertButton.addEventListener("click", () => {
     const item = Office.context.mailbox.item;
     if (!item || !previewImage) {
       status.textContent = "Enter valid TeX before inserting it.";
       return;
     }
 
-    if (!Office.context.requirements.isSetSupported("Mailbox", "1.16")) {
-      status.textContent = "CID image insertion requires Outlook Mailbox requirement set 1.16.";
-      return;
-    }
-
     insertButton.disabled = true;
     status.textContent = "Inserting formula…";
-    let attachmentId: string | undefined;
-    try {
-      if (item.itemType !== Office.MailboxEnums.ItemType.Message) {
-        throw new Error("Inline formula insertion is only supported for messages.");
-      }
-
-      const message = item as Office.MessageCompose;
-      attachmentId = await addInlineImage(message, previewImage);
-      const contentId = await getInlineImageContentId(message, attachmentId);
-      const image = previewImage.cloneNode(false) as HTMLImageElement;
-      image.setAttribute("src", `cid:${contentId}`);
-      await new Promise<void>((resolve, reject) => {
-        message.body.setSelectedDataAsync(
-          image.outerHTML,
-          { coercionType: Office.CoercionType.Html },
-          (result) => {
-            if (result.status === Office.AsyncResultStatus.Failed) {
-              reject(new Error(result.error.message));
-            } else {
-              resolve();
-            }
-          }
-        );
-      });
-      status.textContent = "Formula inserted.";
-    } catch (error) {
-      status.textContent =
-        error instanceof Error
-          ? `Could not insert the formula: ${error.message}`
-          : "Could not insert the formula into the message.";
-      console.error("Failed to insert TeX image:", error);
-      if (attachmentId) {
-        try {
-          await removeInlineImage(item as Office.MessageCompose, attachmentId);
-        } catch (removeError) {
-          console.error("Failed to remove the unused inline TeX attachment:", removeError);
+    item.body.setSelectedDataAsync(
+      previewImage.outerHTML,
+      { coercionType: Office.CoercionType.Html },
+      (result) => {
+        if (result.status === Office.AsyncResultStatus.Failed) {
+          status.textContent = "Could not insert the formula into the message.";
+          console.error("Failed to insert TeX image:", result.error.message);
+          insertButton.disabled = !previewImage;
+          return;
         }
+        status.textContent = "Formula inserted.";
+        insertButton.disabled = !previewImage;
       }
-    } finally {
-      insertButton.disabled = !previewImage;
-    }
+    );
   });
 
   await updatePreview();
