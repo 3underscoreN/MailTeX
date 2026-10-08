@@ -4,7 +4,7 @@
   <Version>1.0.0.0</Version>
   <ProviderName>Kelvin</ProviderName>
   <DefaultLocale>en-HK</DefaultLocale>
-  <DisplayName DefaultValue="MailTex"/>
+  <DisplayName DefaultValue="MailTeX"/>
   <Description DefaultValue="An add-in for rendering TeX in Outlook messages."/>
   <IconUrl DefaultValue="https://mailtex.3underscoren.work/assets/icon-64.png"/>
   <HighResolutionIconUrl DefaultValue="https://mailtex.3underscoren.work/assets/icon-128.png"/>
@@ -76,11 +76,11 @@
         <bt:Url id="Taskpane.Url" DefaultValue="https://mailtex.3underscoren.work/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="ComposeGroupLabel" DefaultValue="MailTex"/>
-        <bt:String id="TaskpaneButton.Label" DefaultValue="Open MailTex"/>
+        <bt:String id="ComposeGroupLabel" DefaultValue="MailTeX"/>
+        <bt:String id="TaskpaneButton.Label" DefaultValue="Open MailTeX"/>
       </bt:ShortStrings>
       <bt:LongStrings>
-        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Opens the MailTex task pane."/>
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Opens the MailTeX task pane."/>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
