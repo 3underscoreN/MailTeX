@@ -29,7 +29,7 @@ MailTeX is an Outlook add-in that allows you to write TeX code and insert the re
 2. Type your TeX code in the MailTeX pane.
 3. Click the "Insert" button to add the equations to your email as PNG images. Both inline and block equations are supported (we highly suggest using block equations, though).
 
-![How to use, Outlook Web](https://github.com/3underscoreN/MailTex/blob/main/how-to-use-web.gif)
+![How to use, Outlook Web](docs/how-to-use-web.gif)
 
 ### New Outlook
 
@@ -37,4 +37,4 @@ MailTeX is an Outlook add-in that allows you to write TeX code and insert the re
 2. Type your TeX code in the MailTeX pane.
 3. Click the "Insert" button to add the equations to your email as PNG images.
 
-![How to use, New Outlook](https://github.com/3underscoreN/MailTex/blob/main/how-to-use-new.gif)
+![How to use, New Outlook](docs/how-to-use-new.gif)
