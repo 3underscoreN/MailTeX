@@ -11,6 +11,8 @@ MailTeX is an Outlook add-in that allows you to write TeX code and insert the re
 - Live preview of the rendered equations
 - Insert the equations into your email as PNG images
 
+## Known Issues
+
 > [!IMPORTANT]
 > Currently, MailTeX inserts the rendered equations as PNG images in the email body. While most email clients support this, **Gmail web mail does not seem to be happy about it**. Therefore, if you are sending emails to Gmail users, please think twice before using this add-in.
 
@@ -23,18 +25,38 @@ MailTeX is an Outlook add-in that allows you to write TeX code and insert the re
 
 ## Usage
 
-### Outlook Web
+### Outlook Web / New Outlook (Windows)
 
 1. In the Compose menu, click "Apps" on the ribbon, then select "MailTeX" from the list of available add-ins.
 2. Type your TeX code in the MailTeX pane.
 3. Click the "Insert" button to add the equations to your email as PNG images. Both inline and block equations are supported (we highly suggest using block equations, though).
 
-![How to use, Outlook Web](docs/how-to-use-web.gif)
+<details>
+<summary>Animated instructions</summary>
 
-### New Outlook
+![How to use, Outlook Web & New Outlook (Windows)](docs/how-to-use-web.gif)
+
+</details>
+
+### New Outlook (macOS)
 
 1. In the Compose menu. click "..." on the ribbon, then select "MailTeX" from the list.
 2. Type your TeX code in the MailTeX pane.
 3. Click the "Insert" button to add the equations to your email as PNG images.
 
-![How to use, New Outlook](docs/how-to-use-new.gif)
+<details>
+<summary>Animated instructions</summary>
+
+![How to use, New Outlook (macOS)](docs/how-to-use-new.gif)
+
+</details>
+
+## Contributing
+
+Contribution to MailTeX is welcomed and highly appreciated.
+
+Thank you for using MailTeX!
+
+## License
+
+MailTeX is licensed under the MIT License. See [LICENSE](LICENSE) for more details.
