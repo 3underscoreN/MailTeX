@@ -13,7 +13,7 @@ MailTeX is an Outlook add-in that allows you to write TeX code and insert the re
 
 ## Known Issues
 
-- Inserted equations would not be correctly displayed in Gmail web and Gmail Mobile.
+- Inserted equations may not display correctly in Gmail on the web or in the Gmail mobile apps.
 > [!IMPORTANT]
 > Currently, MailTeX inserts the rendered equations as PNG images in the email body. While most email clients support this, **Gmail web mail does not seem to be happy about it**. Therefore, if you are sending emails to Gmail users, please think twice before using this add-in.
 
