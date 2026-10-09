@@ -54,7 +54,7 @@ MailTeX is an Outlook add-in that allows you to write TeX code and insert the re
 
 ## Contributing
 
-Contribution to MailTeX is welcomed and highly appreciated.
+Contributions to MailTeX are welcome and greatly appreciated.
 
 Thank you for using MailTeX!
 
